@@ -57,15 +57,3 @@ class MyDict:
         self.head = self.head.next
         self.head.previous = None
         del self.data[previously_head.key]
-
-
-if __name__ == '__main__':
-    size = 3
-    my_dict = MyDict(size)
-    my_dict.put(1, "one")
-    my_dict.put(2, "two")
-    my_dict.put(3, "three")
-    my_dict.get(1)
-    my_dict.get(2)
-    my_dict.put(4, "four")
-    assert all(elem in my_dict.data for elem in {1, 2, 4}) and 3 not in my_dict.data

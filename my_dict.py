@@ -1,3 +1,5 @@
+import typing
+
 class Node:
     def __init__(self):
         self.next = None
@@ -12,7 +14,7 @@ class MyDict:
         self.head = None
         self.tail = None
 
-    def put(self, key, value):
+    def put(self, key: typing.Hashable, value):
         if key in self.data:
             self.move_node_to_tail(self, self.data[key])
         else:
@@ -24,7 +26,7 @@ class MyDict:
         self.data[key].key = key
         self.data[key].value = value
 
-    def get(self, key):
+    def get(self, key: typing.Hashable):
         if key not in self.data:
             raise ValueError("key " + str(key) + " was not found in My Dict")
         node = self.data[key]
